@@ -12,3 +12,4 @@ public class Main {
         arrayManager.showElement(index);
         }
 }
+// pizdec
