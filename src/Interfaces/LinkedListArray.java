@@ -16,9 +16,33 @@ public class LinkedListArray implements ArrayManager{
         
     public LinkedListArray(){
         head = null;
-        addElement(0);
         addElement(1);
+        addElement(2);
     }
+    
+    @Override
+    public int getElement(int index){
+        Element temp = head;
+        for (int i=0; i<index; i++){
+            temp = temp.next;
+    }
+        return temp.data;
+    }
+    
+    @Override
+    public void changeElement(int index, int data){
+        Element temp = head;
+        for (int i = 0; i<index; i++){
+            temp=temp.next;
+        }
+        temp.data=data;
+    }
+    
+    @Override
+    public int getLength(){
+        return count;
+    }
+    
     public void addElement(int data){
 	if (head == null) {
 	head = new Element(data, null, null);
@@ -32,18 +56,25 @@ public class LinkedListArray implements ArrayManager{
         }
         count++;
     }  //добавление элемента в конец
-
-    public void getLength(){
-    System.out.println("Размерность связного списка = " + count);
-}//возвращение длины связного списка
     
     @Override
-    public void showElement(int index) {
+    public String toString(){
+        StringBuffer list = new StringBuffer(count);
+        Element temp = head;
+        for (int i = 0; i<count; i++){
+            list.append(temp.data + " ");
+            temp = temp.next;
+        }
+        return list.toString();
+    }
+    
+    @Override
+    public int showElement(int index) {
     Element temp = head;
     for (int i=0; i<index; i++){
         temp = temp.next;
     }
     System.out.println("Элемент связного списка № " + index + " = " + temp.data);
-    temp = null;
-} //Вывод элемента по индексу
+    return temp.data; //Вывод элемента по индексу
+    }
 }
