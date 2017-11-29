@@ -50,5 +50,4 @@ public class ArrayVector implements ArrayManager {
     public void changeElement(int index, int data) {
         mas[index]=data;
     }
-
 }
