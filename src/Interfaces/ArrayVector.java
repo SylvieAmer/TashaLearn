@@ -50,4 +50,14 @@ public class ArrayVector implements ArrayManager {
     public void changeElement(int index, int data) {
         mas[index]=data;
     }
+    
+    @Override
+    public void addElement(int data){
+        System.out.println("Бурулька");
+    }
+    
+    @Override
+        public ArrayManager clone(){
+            return null;
+        }
 }

@@ -21,6 +21,15 @@ public class LinkedListArray implements ArrayManager{
     }
     
     @Override
+        public ArrayManager clone() {
+           ArrayManager newList = new LinkedListArray();
+           for (int i = 0;i<this.count; i++){
+               newList.addElement(this.getElement(i));
+           } 
+            return newList;
+        }
+    
+    @Override
     public int getElement(int index){
         Element temp = head;
         for (int i=0; i<index; i++){

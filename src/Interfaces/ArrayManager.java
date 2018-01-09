@@ -1,10 +1,13 @@
 package Interfaces;
 
-public interface ArrayManager {
-    public int showElement(int index);
-    public int getElement(int index);
-    public int getLength();
-    public void changeElement(int index, int data);
+ interface ArrayManager {
+     int showElement(int index);
+     int getElement(int index);
+     void addElement(int data);
+     int getLength();
+     void changeElement(int index, int data);
     @Override
-    public String toString();
+     String toString();
+     
+     ArrayManager clone();
 }
